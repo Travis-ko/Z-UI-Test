@@ -181,7 +181,7 @@ div.carousel-caption{
 
   .overlay-link{
     height: 50px;
-    font-size: 1.25vw;
+    font-size: 1.75vw;
     font-weight: bold;
     width: 75%;
     margin: 0 auto;
@@ -604,6 +604,22 @@ div.carousel-caption{
   background-color: #f9f9f9;
   width: 100%;
   height: 68px;
+}
+
+@media only screen and (max-width: 768px){
+  .newsletter-form button{
+    margin: auto 20px;
+  }
+  .newsletter-title{
+    padding-left: 14%;
+  }
+  .newsletter-form{
+    padding-left: 10%;
+  }
+
+  .newsletter-signup, .footer-menu-links{
+    width: 100%;
+  }
 }
 
 //global styling
