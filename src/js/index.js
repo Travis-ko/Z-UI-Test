@@ -2,8 +2,16 @@ import 'bootstrap';
 
 import '../scss/index.scss';
 
-$('#alert').click(() => {
-  alert('jQuery works!');
-});
+$(document).ready(function() {
+  $('.collection-item').hover(function() {
+    $('.item-overlay', this).toggleClass('item-hover');
+  });
 
-// Your jQuery code
+  $('.cart-link').hover(function() {
+    $('.cart-image').attr('src', './public/images/box_hover.png');
+  });
+
+  $('.cart-link').mouseout(function() {
+    $('.cart-image').attr('src', './public/images/box.png');
+  });
+});

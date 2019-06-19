@@ -14,50 +14,139 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <nav class="navbar navbar-expand-md fixed-top bg-white">
+        <div class="login-wrapper">
+          <img
+                class="mini-logo"
+                alt="mini-logo"
+                src="./public/images/mini_logo.png"
+          />
+          <a class="login-link" href="#">Login</a>
+        </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-left">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-            <li class="nav-item">
-              <a id="alert" class="nav-link" href="#">Alert</a>
+              <a class="navbar-link" href="#">SHOP</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="navbar-link" href="#">CLEANSES</a>
+            </li>
+            <li class="nav-item">
+              <a id="alert" class="navbar-link " href="#">BUILD A BOX</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input
-              class="form-control mr-sm-2"
-              type="text"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
+          <img
+              class="logo-image"
+              alt="logo-image"
+              src="./public/images/navbar_logo.png"
+          />
+          <ul class="navbar-right">
+            <li class="nav-item active">
+              <a class="navbar-link" href="#">THE UNCONVENTIONAL</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-link" href="#">WHO WE ARE</a>
+            </li>
+          </ul>
+        </div>
+        <div class="cart-toggle-wrap">
+        <a class="cart-link">
+          <img
+              class="cart-image"
+              alt="cart-image"
+              src="./public/images/box.png"
+          />
+          <span class="cart-qty">(0)</span>
+        </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <img
+                  class="toggle-icon"
+                  alt="toggole-icon"
+                  src="./public/images/hamburger.png"
+              />
+            </span>
+          </button>
         </div>
       </nav>
     </header>
 
     <main role="main">
+      <!--
+        Main content. All HTML is presented one file, sections will by larger comments
+        ==================================================
+      -->
+
+      <div class="hero-banner-container first section">
+        <div class="hero-banner left">
+          <img
+              class="slide desktop"
+              alt="hero-image"
+              src="./public/images/hero_banner_left.png"
+          />
+          <img
+              class="slide mobile"
+              alt="hero-image"
+              src="./public/images/mobile_hero_banner_left.png"
+          />
+          <div class="hero-banner-caption">
+            <h2 class="section-heading">WE SHIP OVERNIGHT NATIONWIDE</h2>
+            <p class="section-subtext">
+              We deliver Tuesday-Friday and offer the ability to schedule ahead.
+            </p>
+            <button class="cta-btn float" role="button">
+              <a class="cta-link cta-text" href="#">View Menu</a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Brand Info Section. Used to highlight product and services. I noticed that in the mockup only one sub excerpt was displayed, I decided to have fun with this and when you mouse over this section the display slowly. -->
+
+      <div class="brand-info-section section">
+        <h2 class="section-subheading">YOU BUY IT BY THE BOX</h2>
+        <div class="heading-divider"></div>
+        <p class="section-subtext">
+          Our juices areChoose 7-8 products of your liking and have it delivered to your door as often as you want. Your pick, everytime.
+        </p>
+        <div class="number-item-container">
+          <div class="number-item">
+            <p class="number">01</p>
+            <div class="excerpt-wrapper">
+              <span class="main-excerpt">Build Your Box</span>
+              <p class="sub-excerpt">choose your favorites</p>
+            </div>
+          </div>
+          <div class="number-item">
+            <p class="number">02</p>
+            <div class="excerpt-wrapper">
+              <span class="main-excerpt">Subscribe Or Don't</span>
+              <p class="sub-excerpt two">save when you do</p>
+            </div>
+          </div>
+          <div class="number-item">
+            <p class="number">03</p>
+            <div class="excerpt-wrapper">
+              <span class="main-excerpt">Pick a Delivery Day</span>
+              <p class="sub-excerpt three">we ship overnight</p>
+            </div>
+          </div>
+        </div>
+        <button class="cta-btn float" role="button">
+          <a class="cta-link cta-text" href="#">VIEW DRINKS MENU</a>
+        </button>
+      </div>
+
+      <!--Simple starter carousel for base functionality with minimal jquery. similare styling would be tacked onto an owl carousel in shopify-->
+
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -67,67 +156,55 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              class="first-slide"
+              class="first-slide slide desktop"
               alt="First slide"
-              src="./public/images/image_1.jpg"
+              src="./public/images/callout_banner_1.png"
             />
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
-                <p>
-                  <a class="btn btn-lg btn-primary" href="#" role="button"
-                    >Sign up today</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
             <img
-              class="second-slide"
-              alt="Second slide"
-              src="./public/images/image_2.jpg"
+              class="first-slide slide mobile"
+              alt="First slide"
+              src="./public/images/mobile_callout_banner_1.png"
             />
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
+                <h2 class="section-heading">DRINKS</h2>
+                <div class="heading-divider"> </div>
+                <h3 class="section-subheading">JUICES</h3>
+                <p class="section-subtext">
+                  Our juices are individually crafted to flush, detoxify, hydrate and strengthen the body.
                 </p>
-                <p>
-                  <a class="btn btn-lg btn-primary" href="#" role="button"
-                    >Learn more</a
+                <button class="cta-btn" role="button">
+                  <a class="cta-link cta-text" href="#"
+                    >VIEW JUICE MENU</a
                   >
-                </p>
+                </button>
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <img
-              class="third-slide"
-              alt="Third slide"
-              src="./public/images/image_3.jpg"
+              class="first-slide slide desktop"
+              alt="second slide"
+              src="./public/images/callout_banner_2.png"
+            />
+            <img
+              class="first-slide slide mobile"
+              alt="First slide"
+              src="./public/images/mobile_callout_banner_2.png"
             />
             <div class="container">
-              <div class="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
+              <div class="carousel-caption">
+                <h2 class="section-heading">DRINKS</h2>
+                <div class="heading-divider"> </div>
+                <h3 class="section-subheading">SHOTS</h3>
+                <p class="section-subtext">
+                  JSH Shots are individually crafted to flush, detoxify, hydrate and strengthen the body.
                 </p>
-                <p>
-                  <a class="btn btn-lg btn-primary" href="#" role="button"
-                    >Browse gallery</a
+                <button class="cta-btn" role="button">
+                  <a class="cta-link cta-text" href="#"
+                    >VIEW SHOTS MENU</a
                   >
-                </p>
+                </button>
               </div>
             </div>
           </div>
@@ -152,172 +229,238 @@
         </a>
       </div>
 
-      <!--
-        Marketing messaging and featurettes
-        ==================================================
-      -->
-      <!--
-        Wrap the rest of the page in another container to center all the content.
-      -->
+      <!-- The UI Mockup I Received presented this in the same section as the Carousel. Personally I believe this should be in it's own section as a featured collection(s). Item's are laid out in the same mannerr you would receive collection item objects. -->
 
-      <div class="container marketing">
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
+      <div class="collection-items">
+        <div class="heading-divider"> </div>
+        <h3 class="section-subheading">PICK YOUR PLEASURE</h3>
+        <p class="section-subtext">Our products are nourishing, satiating and never cut with cheap fillers.</p>
+        <div class="items-wrapper">
+          <div class="collection-item">
             <img
-              class="rounded-circle"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="Generic placeholder image"
-              width="140"
-              height="140"
+              class="item-image"
+              alt="lemonades"
+              src="./public/images/callout_lemonade.png"
             />
-            <h2>Heading</h2>
-            <p>
-              Donec sed odio dui. Etiam porta sem malesuada magna mollis
-              euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-              Praesent commodo cursus magna.
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#" role="button"
-                >View details &raquo;</a
-              >
-            </p>
+            <div class="item-overlay">
+              <a class="overlay-link">VIEW LEMONADES MENU</a>
+            </div>
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <div class="collection-item">
             <img
-              class="rounded-circle"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="Generic placeholder image"
-              width="140"
-              height="140"
+              class="item-image"
+              alt="lemonades"
+              src="./public/images/callout_milks.png"
             />
-            <h2>Heading</h2>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-              eget lacinia odio sem nec elit. Cras mattis consectetur purus sit
-              amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-              mauris condimentum nibh.
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#" role="button"
-                >View details &raquo;</a
-              >
-            </p>
+            <div class="item-overlay">
+              <a class="overlay-link">VIEW MILKS MENU</a>
+            </div>
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <div class="collection-item">
             <img
-              class="rounded-circle"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="Generic placeholder image"
-              width="140"
-              height="140"
+              class="item-image"
+              alt="lemonades"
+              src="./public/images/callout_water.png"
             />
-            <h2>Heading</h2>
-            <p>
-              Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-              egestas eget quam. Vestibulum id ligula porta felis euismod
-              semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-              condimentum nibh, ut fermentum massa justo sit amet risus.
-            </p>
-            <p>
-              <a class="btn btn-secondary" href="#" role="button"
-                >View details &raquo;</a
-              >
-            </p>
+            <div class="item-overlay">
+              <a class="overlay-link">VIEW WATERS MENU</a>
+            </div>
           </div>
-          <!-- /.col-lg-4 -->
-        </div>
-        <!-- /.row -->
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
-              First featurette heading.
-              <span class="text-muted">It'll blow your mind.</span>
-            </h2>
-            <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
-            </p>
-          </div>
-          <div class="col-md-5">
+          <div class="collection-item">
             <img
-              class="featurette-image img-fluid mx-auto"
-              src="http://via.placeholder.com/500x500"
-              alt="Generic placeholder image"
+              class="item-image"
+              alt="lemonades"
+              src="./public/images/callout_smoothies.png"
             />
+            <div class="item-overlay">
+              <a class="overlay-link">VIEW SMOOTHIES MENU</a>
+            </div>
           </div>
         </div>
-
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">
-              Oh yeah, it's that good.
-              <span class="text-muted">See for yourself.</span>
-            </h2>
-            <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
-            </p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img
-              class="featurette-image img-fluid mx-auto"
-              src="http://via.placeholder.com/500x500"
-              alt="Generic placeholder image"
-            />
-          </div>
-        </div>
-
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
-              And lastly, this one. <span class="text-muted">Checkmate.</span>
-            </h2>
-            <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
-            </p>
-          </div>
-          <div class="col-md-5">
-            <img
-              class="featurette-image img-fluid mx-auto"
-              src="http://via.placeholder.com/500x500"
-              alt="Generic placeholder image"
-            />
-          </div>
-        </div>
-
-        <hr class="featurette-divider" />
-
-        <!-- /END THE FEATURETTES -->
+        <button class="cta-btn" role="button">
+          <a class="cta-link cta-text" href="#"
+            >VIEW DRINKS MENU</a
+          >
+        </button>
       </div>
-      <!-- /.container -->
 
-      <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>
-          &copy; 2017-2018 Company, Inc. &middot;
-          <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-        </p>
+      <!--Reimnplemented banner. I noticed in the mockup there were two versions of this presented. In order to change this to the version with text to the right with a different image, add the "right" class to the "hero-banner" div. to change the image to the alternative image, change the word "center" in the image src below to the word "right".-->
+
+      <!-- to make this more mobile friendly, I have cropped the full size image so that on the mobile view, we are not losing image quality. displays change on them from media queries in the CSS -->
+
+      <div class="hero-banner-container section">
+        <div class="hero-banner">
+          <img
+              class="slide desktop"
+              alt="hero-image"
+              src="./public/images/hero_banner_2_center.png"
+          />
+          <img
+              class="slide mobile"
+              alt="hero-image"
+              src="./public/images/mobile_hero_banner_2_center.png"
+          />
+          <div class="hero-banner-caption">
+            <h2 class="section-heading">CLEANSE</h2>
+            <div class="heading-divider"> </div>
+            <h3 class="section-subheading">DRINK YOURSELF CLEAN</h3>
+            <p class="section-subtext">
+              You like those cupcakes right? Sweet-spot for the whiskey neat? We get it. Time to cleanse.
+            </p>
+            <button class="cta-btn float" role="button">
+              <a class="cta-link cta-text" href="#"
+                >SHOP CLEANSES</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- this section borrows from the collection item design. personnally I would loop through block objects in the shopify liquid schema in the same way you would with the collections. representation would be the same in liquid.  -->
+
+      <div class="locations-section section">
+        <div class="collection-items">
+          <h2 class="section-heading">LOCATIONS</h2>
+          <div class="items-wrapper">
+            <div class="collection-item">
+              <div class="location-image">
+                <img
+                  class="item-image"
+                  alt="lemonades"
+                  src="./public/images/platform.png"
+                />
+                <div class="item-overlay">
+                  <a class="overlay-link">VIEW STORE DETAILS</a>
+                </div>
+              </div>
+              <div class="location-info-wrapper">
+                <p class="location-title">PLATFORM</p>
+                <p class="section-subtext">Monday - Sunday - 7am - 8pm</p>
+              </div>
+            </div>
+            <div class="collection-item">
+              <div class="location-image">
+                <img
+                  class="item-image"
+                  alt="lemonades"
+                  src="./public/images/dtla.png"
+                />
+                <div class="item-overlay">
+                  <a class="overlay-link">VIEW STORE DETAILS</a>
+                </div>
+              </div>
+              <div class="location-info-wrapper">
+                <p class="location-title">DTLA</p>
+                <p class="section-subtext">Monday - Sunday - 7am - 8pm</p>
+              </div>
+            </div>
+            <div class="collection-item">
+              <div class="location-image">
+                <img
+                  class="item-image"
+                  alt="lemonades"
+                  src="./public/images/pasadena.png"
+                />
+                <div class="item-overlay">
+                  <a class="overlay-link">VIEW STORE DETAILS</a>
+                </div>
+              </div>
+              <div class="location-info-wrapper">
+                <p class="location-title">PASADENA</p>
+                <p class="section-subtext">Monday - Saturday - 7:30am - 7pm</p>
+                <p class="section-subtext">Sunday - 8am - 6pm</p>
+              </div>
+            </div>
+            <div class="collection-item">
+              <div class="location-image">
+                <img
+                  class="item-image"
+                  alt="lemonades"
+                  src="./public/images/venice.png"
+                />
+                <div class="item-overlay">
+                  <a class="overlay-link">VIEW STORE DETAILS</a>
+                </div>
+              </div>
+              <div class="location-info-wrapper">
+                <p class="location-title">VENICE</p>
+                <p class="section-subtext">Monday - Sunday - 7am - 8pm</p>
+              </div>
+            </div>
+          </div>
+          <button class="cta-btn" role="button">
+            <a class="cta-link cta-text" href="#"
+              >VIEW ALL LOCATIONS</a
+            >
+          </button>
+        </div>
+
+      </div>
+
+      <!-- FOOTER W/ mock newsletter form-->
+      <footer class="footer-section">
+        <div class="main-footer section">
+          <div class="newsletter-signup">
+            <form class="newsletter-form" action="">
+              <label class="newsletter-title" for="email">LET'S BE FRIENDS WITH BENEFITS</label>
+              <input type="text" placeholder="&nbsp; &nbsp; Email Address" name="email" required>
+              <button class="cta-btn cta-text" type="submit" class="signupbtn">OK!</button>
+            </form>
+          </div>
+          <!---Menu links as shopify would render link lists -->
+          <div class="footer-menu-links">
+            <div class="link-list">
+              <div class="link-list-title">
+                <p class="">Company</p>
+              </div>
+              <div class="links">
+                <ul>
+                  <li><a href=#>Find Stores</a></li>
+                  <li><a href=#>Our Story</a></li>
+                  <li><a href=#>Our Juice</a></li>
+                  <li><a href=#>Our Farmers</a></li>
+                  <li><a href=#>Our Commitment</a></li>
+                  <li><a href=#>Careers</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="link-list">
+              <div class="link-list-title">
+                <p class="">HELP</p>
+              </div>
+              <div class="links">
+                <ul>
+                  <li><a href=#>FAQ</a></li>
+                  <li><a href=#>Shipping</a></li>
+                  <li><a href=#>Return Policy</a></li>
+                  <li><a href=#>Gift Cards</a></li>
+                  <li><a href=#>Contact Us</a></li>
+                  <li><a href=#>Legal</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="link-list">
+              <div class="link-list-title">
+                <p class="">SOCIAL</p>
+              </div>
+              <div class="links">
+                <ul>
+                  <li><a href=#>Instagram</a></li>
+                  <li><a href=#>Facebook</a></li>
+                  <li><a href=#>Twitter</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub footer with links to legal pages-->
+        <div class="sub-footer">
+          <p class="disclaimer"> &copy; 2016. Juice Served Here. NEVER CONVENTIONAL. All Rights Reserved.</p>
+          <div class="disclaimer-link-wrapper">
+            <a class="float-right disclaimer" href="#">Privacy Policy</a>
+            <a class="float-right disclaimer" href="#">Terms & Conditions</a>
+          </div>
+        </div>
       </footer>
     </main>
   </body>

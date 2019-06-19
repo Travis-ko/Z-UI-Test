@@ -1,3 +1,633 @@
 @import './carousel.css';
 
-// Your customize CSS
+
+.section-heading{
+  font-size: 50px;
+  letter-spacing: 1px;
+  line-height: 46px;
+  color: #231f20;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.section-subheading{
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 36px;
+  color: #231f20;
+  text-align: center;
+}
+
+.section-subtext{
+  width: 375px;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: #231f20;
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.heading-divider{
+  width: 30px;
+  height: 1px;
+  background-color: #f15b4c;
+  margin: 25px auto;
+}
+
+.cta-btn{
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #f95951;
+  border-radius: 2px;
+  margin-top: 15px;
+  transition: background-color .5s ease-in-out;
+}
+.cta-text{
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: #f15b4c;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 15px;
+  transition: color .5s ease-in-out;
+}
+
+.cta-btn:hover{
+  background-color: #ff5e48;
+}
+.cta-btn:hover .cta-text{
+  color: white;
+  text-decoration: none;
+}
+
+//carousel additional styling
+.slide.mobile{
+  display: none;
+}
+
+ol.carousel-indicators li{
+  width: 15px;
+  height: 15px;
+  border-radius: 7px;
+  border: 0px;
+  opacity: 1;
+}
+
+ol.carousel-indicators li.active{
+  background-color: #ff5e48;
+}
+
+div.carousel-caption{
+  min-height: 38vw;
+  padding-top: 45px;
+}
+
+.carousel-caption p{
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.carousel-item .slide{
+  object-fit: fill;
+}
+@media only screen and (max-width: 768px){
+  .slide.mobile{
+    display: block;
+  }
+  .slide.desktop{
+    display: none;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .carousel-item .slide, .carousel-item{
+    height: 50vw;
+  }
+}
+@media only screen and (min-width: 1025px){
+    .carousel-item .slide, .carousel-item{
+    height: 40vw;
+  }
+}
+//end carousel styling
+
+// collection items styling
+
+.items-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.collection-item{
+  width: calc(25% - 60px);
+  margin: auto 30px;
+  position: relative;
+}
+
+.item-image{
+  width: 100%;
+}
+
+.item-overlay{
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity .5s ease-in-out;
+  cursor: pointer;
+}
+.item-hover{
+  opacity: 1;
+}
+.overlay-link{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #f15b4c !important;
+  border: 1px solid #f95951;
+  border-radius: 2px;
+  background-color: #ffffffad;
+  cursor: pointer;
+  font-size: 1.25vw;
+}
+
+.collection-items .cta-btn{
+  display: block;
+  margin: 30px auto;
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 769px){
+  .collection-item{
+    width: calc(50% - 60px);
+    margin: 20px 30px;
+  }
+
+  .item-overlay{
+    height: unset;
+    width: unset;
+    opacity: 1;
+    position: unset;
+  }
+
+  .overlay-link{
+    height: 50px;
+    font-size: 1.25vw;
+    font-weight: bold;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: color .5s ease-in-out, background-color .5s ease-in-out;
+  }
+
+  .overlay-link:hover{
+    background-color: #ff5e48;
+    color: white !important;
+  }
+
+
+}
+
+// end collections styling
+
+//brand info section styling
+.section{
+  margin: 60px auto;
+}
+
+.brand-info-section .section-subtext{
+  width: 575px;
+}
+.brand-info-section .heading-divider{
+  background-color: transparent;
+}
+
+.number-item-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+}
+.number{
+  font-size: 150px;
+  line-height: 120px;
+  color: #ff5e48;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  margin-left: 40px;
+}
+
+.number-item{
+  width: max-content;
+  position: relative;
+  margin: auto 30px;
+}
+
+.excerpt-wrapper{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+}
+
+.brand-info-section:hover .sub-excerpt{
+  opacity: 1;
+}
+
+.main-excerpt{
+  margin-top: 50px;
+  display: block;
+  border-bottom: 1px solid;
+  width: 90%;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: #231f20;
+  font-weight: 500;
+}
+
+.sub-excerpt{
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: #231f20;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.sub-excerpt.two{
+  transition: opacity 1s ease-in-out;
+}
+
+.sub-excerpt.three{
+  transition: opacity 1.5s ease-in-out;
+}
+
+@media only screen and (max-width: 768px){
+  .brand-info-section .section-subtext{
+    width: unset;
+    margin: auto 30px;
+  }
+  .sub-excerpt{
+    opacity: 1;
+  }
+}
+
+// hero banner styling
+.hero-banner{
+  position: relative;
+}
+
+.hero-banner .slide.desktop, .hero-banner .slide.mobile{
+  width: 100%;
+}
+
+.hero-banner-caption{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.hero-banner .section-subtext{
+  width: 425px;
+}
+
+.hero-banner .cta-btn.float{
+    margin: 10vw auto;
+}
+
+@media only screen and (max-width: 768px){
+  .hero-banner-container.first .section-heading{
+    font-size: 5vw;
+  }
+}
+
+
+@media only screen and (min-width: 769px){
+  .hero-banner.right .hero-banner-caption{
+    right: 0;
+    margin-right: 60px;
+    width: min-content;
+    left: unset;
+  }
+
+  .hero-banner.right .section-heading, .hero-banner.right .section-subheading, .hero-banner.right .section-subtext{
+    text-align: left;
+  }
+
+  .hero-banner.right .heading-divider{
+    margin-left: 0px;
+  }
+
+  .hero-banner.left .hero-banner-caption{
+    margin-left: 60px;
+    width: min-content;
+    left: unset;
+    min-width: 500px;
+  }
+
+  .hero-banner.left .section-heading, .hero-banner.left .section-subheading, .hero-banner.left .section-subtext{
+    text-align: left;
+  }
+
+  .hero-banner.left .section-subtext{
+    margin-left: 0px;
+    width: 325px;
+  }
+
+  .hero-banner.left .heading-divider{
+    margin-left: 0px;
+  }
+
+  .hero-banner.left .cta-btn.float{
+    margin: 3vw auto;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+  .hero-banner .cta-btn.float{
+    margin: 5vw auto;
+  }
+}
+
+//end hero banner styling
+
+//loocations styling
+
+.location-title{
+  margin-bottom: 0px;
+  margin-top: 20px;
+  color: #f15b4c;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0px;
+}
+
+.locations-section .section-subtext{
+  width: max-content;
+  margin: unset;
+}
+
+.location-image{
+  position: relative;
+}
+
+.location-info-wrapper{
+  min-height: 75px;
+}
+
+@media only screen and (min-width: 769px){
+  .locations-section .section-subtext{
+    font-size: 1.3vw;
+  }
+  .locations-section .location-title{
+    font-size: 1.6vw;
+  }
+}
+
+@media only screen and (max-width: 768px){
+    .locations-section .section-subtext{
+    font-size: 2.25vw;
+  }
+  .locations-section .locati0n-title{
+    font-size: 2.75vw;
+  }
+  .locations-section .overlay-link{
+    width: 100%;
+  }
+}
+
+//end locations styling
+
+//Navbar styling
+
+.login-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 28px;
+}
+.login-link{
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 36px;
+  color: #231f20;
+  height: 28px;
+}
+
+.navbar-link{
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 36px;
+  color: #231f20;
+  margin: 0px 5px;
+  display: block;
+}
+
+.navbar-link:hover{
+  color: #f15b4c;
+}
+
+.navbar-left, .navbar-right{
+  list-style-type: none;
+  display: flex;
+  padding-inline-start: 0px;
+  margin-bottom: 0px;
+  margin-left: 5%;
+  width: 28%;
+}
+
+.cart-link{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-image{
+  max-height: min-content;
+}
+.cart-qty{
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #f15b4c;
+}
+
+.logo-image{
+  margin: 0px auto;
+  height: 3vw;
+}
+
+.mini-logo{
+  display: none;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.cart-toggle-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar-toggler-icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@media only screen and (max-width: 768px){
+  .navbar-left, .navbar-right{
+      display: block;
+      width: max-content;
+      margin-left: 0px;
+    }
+
+  .logo-image{
+    display: none;
+    }
+
+  .mini-logo{
+    display: block;
+  }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1124px){
+  .navbar-link{
+    font-size: 1vw;
+  }
+}
+
+//end navbar styling
+
+
+
+//footer styling
+.main-footer{
+  min-height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  border-top: 1px solid #e1e1e1;
+}
+.newsletter-signup{
+  width: 50%;
+  min-height: 200px;
+}
+.newsletter-title{
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: #231f20;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-form{
+  padding-left: 25%
+}
+
+.newsletter-form input, .newsletter-form label, .newsletter-form button{
+  float: left;
+}
+
+.newsletter-form input{
+  width: 270px;
+}
+
+.newsletter-form button{
+  height: 30px;
+  width: 90px;
+  line-height: 27px;
+}
+
+.newsletter-form button:hover{
+  background-color: #ff5e48;
+  color: white;
+}
+
+.footer-menu-links{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-list{
+  width: calc(33% - 40px);
+}
+
+.link-list ul{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.links li a{
+  font-size: 13px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: #231f20;
+}
+
+.disclaimer{
+  margin: 0 20px;
+  font-size: 13px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: #999596;
+}
+
+.sub-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 68px;
+}
+
+//global styling
+
+body{
+  padding-bottom: 0px;
+}
+.first.section{
+  margin-top: 0px;
+}
+.cta-btn.float{
+  display: block;
+  margin: auto;
+}
+
+button:focus{
+  outline: unset;
+}
+
+
+
+
+
+
+
+
+
